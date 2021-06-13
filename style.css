@@ -49,8 +49,7 @@ font-family: 'diatype';
   grid-column: 4 / span 1;
   display: inline-block;
 }
-.year{
-  color:red;
+.year{  
   grid-column: 1 / span 1;
   margin-right:5%;
 }
