@@ -7,7 +7,7 @@ $(document).ready(function(){
               content: function()
               {
                 let $thumbnail = $(this).find("img").get(0)
-                $thumbnail.css("width","500px")
+                $(thumbnail).css("width","500px")
                 return $thumbnail;
               },
               show: null, // show immediately
