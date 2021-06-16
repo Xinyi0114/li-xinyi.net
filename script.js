@@ -17,8 +17,7 @@ $(document).ready(function(){
               //effect:'toggle';
               show: null, // show immediately
               track:true,//follow the mouse
-              position:'top right',
-              offset:[200,50],
+
           });
 
     //  });
