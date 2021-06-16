@@ -3,10 +3,11 @@ $(document).ready(function(){
           //$(this).tooltip({content:'	<img src="thumbnail/rape.png"  >'})
           //let thumbnail = $(this).find("img")
           $(this).tooltip({
-              items: '.item .header',
+              items: '.item',
               content: function()
               {
-                let $thumbnail = $(this).find("img")
+                let $thumbnail = $(this).find("img").get(0)
+                $thumbnail.css("width","500px")
                 return $thumbnail;
               },
               show: null, // show immediately
