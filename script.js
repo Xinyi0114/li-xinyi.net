@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $(".item").hover(function(){
+  //$(".item").hover(function(){
           //$(this).tooltip({content:'	<img src="thumbnail/rape.png"  >'})
           //let thumbnail = $(this).find("img")
           $(this).tooltip({
@@ -7,39 +7,19 @@ $(document).ready(function(){
               content: function()
               {
                 var thumbnail = $(this).find("img").get(0);
-				$(thumbnail).css('width', '500px');
+				        $(thumbnail).css(
+                  {'width': '20vw',
+                  //'position':'absolute',
+
+              });
                 return thumbnail;
               },
+              //effect:'toggle';
               show: null, // show immediately
               track:true,//follow the mouse
-              open: function(event, ui)
-              {
-                  if (typeof(event.originalEvent) === 'undefined')
-                  {
-                      return false;
-                  }
-
-                  var $id = $(ui.tooltip).attr('id');
-                  // close any lingering tooltips
-                  $('div.ui-tooltip').not('#' + $id).remove();
-
-                  // ajax function to pull in data and add it to the tooltip goes here
-              },
-              close: function(event, ui)
-              {
-                  ui.tooltip.hover(function()
-                  {
-                      $(this).stop(true).fadeTo(200, 1);
-                  },
-                  function()
-                  {
-                      $(this).fadeOut('200', function()
-                      {
-                          $(this).remove();
-                      });
-                  });
-              }
+              position:'top right',
+              offset:[200,50],
           });
 
-      });
+    //  });
 });

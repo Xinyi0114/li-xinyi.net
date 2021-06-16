@@ -43,13 +43,14 @@ font-family: 'diatype';
 }
 .item img{
   display: none;
-  position: absolute;
+  width:30vw;
+  
 }
 .item .tag{
   grid-column: 4 / span 1;
   display: inline-block;
 }
-.year{  
+.year{
   grid-column: 1 / span 1;
   margin-right:5%;
 }
