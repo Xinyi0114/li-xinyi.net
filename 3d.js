@@ -32,3 +32,17 @@ FBXloader.load( '3d/character.fbx', function (fbx) {
   renderer.setSize(window.innerWidth, window.innerHeight)
   renderer.setPixelRatio(window.devicePixelRatio)
   renderer.setClearColor(0x000000, 1)
+
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5000)
+  camera.position.z = -50;
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.05;
+  controls.screenSpacePanning = false;
+  controls.minDistance = 100;
+  controls.maxDistance = 500;
+  controls.maxPolarAngle = Math.PI / 2;
+  controls.keyPanSpeed = 15;
+  controls.update()
+  controls.listenToKeyEvents( window );
+  //
