@@ -6,8 +6,8 @@ import { CSS2DRenderer, CSS2DObject} from './three.js-master/examples/jsm/render
 
 const GLTFloader = new GLTFLoader();
 const FBXloader = new FBXLoader();
-FBXloader.load( '3d/character.fbx', function (fbx) {
-  scene.add( fbx.scene );
+GLTFLoader.load( '3d/female.gltf', function (gltf) {
+  scene.add( gltf.scene );
   //fbx.scene.position.set(10, 6, -10);
 
 }, undefined, function ( error ) {
