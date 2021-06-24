@@ -1,8 +1,8 @@
 import * as THREE from './three.js-master/build/three.module.js';
 import {GLTFLoader} from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
-import {FBXLoader} from './three.js-master/examples/jsm/loaders/FBXLoader.js';
-import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls.js';
-import { CSS2DRenderer, CSS2DObject} from './three.js-master/examples/jsm/renderers/CSS2DRenderer.js';
+//import {FBXLoader} from './three.js-master/examples/jsm/loaders/FBXLoader.js';
+//import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls.js';
+//import { CSS2DRenderer, CSS2DObject} from './three.js-master/examples/jsm/renderers/CSS2DRenderer.js';
 import { DRACOLoader } from './three.js-master/examples/jsm/loaders/DRACOLoader.js';
 
 const sectionTag = document.querySelector("div.three")
@@ -15,7 +15,9 @@ renderer.setClearColor(0x000000, 1)
 sectionTag.appendChild(renderer.domElement)
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5000)
+scene.add( camera );
 //camera.position.z = -50;
+/*
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
@@ -36,7 +38,7 @@ const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   console.error( error );
 
 } );
-
+*/
   const scene = new THREE.Scene()
   const ambientLight = new THREE.AmbientLight(0x404040)
   scene.add(ambientLight)
