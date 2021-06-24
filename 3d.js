@@ -9,7 +9,6 @@ const FBXloader = new FBXLoader();
 const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   scene.add( gltf.scene );
   gltf.scene.position.set(10, 6, -10);
-  gltf.scene.layers.set(1)
 }, undefined, function ( error ) {
 
   console.error( error );
