@@ -21,6 +21,8 @@ const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   const pointLight = new THREE.PointLight(0xffffff,1,0)
   pointLight.position.set(500,500,-2000)
   scene.add(pointLight)
+  const light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
+  scene.add( light );
   //
   //
 
