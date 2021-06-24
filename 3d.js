@@ -15,7 +15,6 @@ renderer.setClearColor(0x000000, 1)
 sectionTag.appendChild(renderer.domElement)
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5000)
-scene.add( camera );
 //camera.position.z = -50;
 /*
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -47,6 +46,7 @@ const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   scene.add(pointLight)
   const light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
   scene.add( light );
+  scene.add( camera );
   //
   //
 
