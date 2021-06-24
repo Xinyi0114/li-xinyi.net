@@ -33,9 +33,9 @@ const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   renderer.setPixelRatio(window.devicePixelRatio)
   renderer.setClearColor(0x000000, 1)
   sectionTag.appendChild(renderer.domElement)
-  
+
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5000)
-  camera.position.z = -50;
+  //camera.position.z = -50;
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
   controls.dampingFactor = 0.05;
@@ -48,15 +48,7 @@ const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   controls.listenToKeyEvents( window );
   //
 
-  const makePlane = function(width,height){
-    const geometry = new THREE.PlaneGeometry( width, height);
-
-    const material = new THREE.MeshBasicMaterial({color: 0xffffff})
-     material.side = THREE.DoubleSide;
-
-    const mesh = new THREE.Mesh( geometry, material );
-    scene.add( mesh );
-    return mesh
-  }
-  const test=makePlane(160,90)
-  scene.add(test)
+  const geometry = new THREE.BoxGeometry( 5, 5, 5 );
+  const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+  const cube = new THREE.Mesh( geometry, material );
+  scene.add( cube );
