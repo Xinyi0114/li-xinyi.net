@@ -39,6 +39,7 @@ const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
 } );
 */
   const scene = new THREE.Scene()
+  scene.add( camera );
   const ambientLight = new THREE.AmbientLight(0x404040)
   scene.add(ambientLight)
   const pointLight = new THREE.PointLight(0xffffff,1,0)
@@ -46,7 +47,7 @@ const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   scene.add(pointLight)
   const light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
   scene.add( light );
-  scene.add( camera );
+
   //
   //
 
