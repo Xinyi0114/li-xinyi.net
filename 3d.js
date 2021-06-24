@@ -4,7 +4,7 @@ import {FBXLoader} from './three.js-master/examples/jsm/loaders/FBXLoader.js';
 import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls.js';
 import { CSS2DRenderer, CSS2DObject} from './three.js-master/examples/jsm/renderers/CSS2DRenderer.js';
 
-const GLTFloader = new GLTFLoader();
+const gltfLoader = new GLTFLoader();
 const FBXloader = new FBXLoader();
 const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   scene.add( gltf.scene );
