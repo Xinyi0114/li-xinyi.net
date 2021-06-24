@@ -1,18 +1,26 @@
-/*
+
 @font-face {
-  font-family: 'diatype';
-  src: url(fonts/ABCDiatype-Regular-Trial.woff),
-  url(fonts/ABCDiatype-Regular-Trial.woff2);
+  font-family: 'VG500';
+  src: url(VG5000-Regular_web.woff);
+  font-weight: 700;
 }
-*/
+@font-face {
+  font-family: 'Barlow-elasticc';
+  src: url(Barlow-elasticc.otf);
+     font-weight: 500;
+}
+@keyframes header {
+  from {font-size: 1rem;}
+  to {font-size: 1.5rem;}
+}
+
 html{
-font-family: 'diatype';
 /* fixed font size */
     font-size: 16px;
     /* relative font size with min, max value */
     font-size: clamp(16px, 2vw, 24px);
-    letter-spacing: -0.05em;
-    line-height: 1.5;
+
+    line-height: 1.2;
     /* optimize text-redering for exact shapes */
     text-rendering: geometricPrecision;
     /* optimize text-redering for legibility */
@@ -21,31 +29,81 @@ font-family: 'diatype';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+body{
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-weight: 500;
+}
+.menu{
+  font-family: 'Barlow-elasticc';
+  position:fixed;
+  font-size: 1rem;
+}
+.menu span{
+  position:fixed;
+  cursor: pointer;
+}
+#works{
+  top:0.8rem;
+  left:0.8rem;
+}
+#cv{
+  top:0.8rem;
+  right:0.8rem;
+}
+#about{
+  bottom:0.8rem;
+  left:0.8rem;
+}
+#download{
+  bottom:0.8rem;
+  right:0.8rem;
+}
+#back{
+  bottom: 2.5rem;
+  right:0.8rem;
+  display:none;
+}
 .flex{
-  width:80%;
-  margin:10vh auto;
+  width:100%;
   display:flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
+  top:100vh;
+  position:absolute;
 }
 
 .item{
-  width:100%;
-  margin-bottom: 1.5rem;
+  width:80%;
+  margin:auto;
+  margin-bottom: 1rem;
   display: grid;
-  grid-template-columns:5% 40% 15% 15%;
+  grid-template-columns:5% 40% 15% 25%;
   justify-content: space-between;
   column-gap: 5%；
 }
+
 .item .header{
   display: inline-block;
   grid-column: 2 / span 1;
+  cursor:pointer;
 }
+/*
+.item .header:hover{
+  animation-name: header;
+  animation-duration: 0.4s;
+
+}
+*/
 .item img{
-  display: none;
-  width:30vw;
-  
+  display:none;
+  position:fixed;
+  width:50vw;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  //border-radius: 30%;
 }
+
 .item .tag{
   grid-column: 4 / span 1;
   display: inline-block;
@@ -62,12 +120,14 @@ font-family: 'diatype';
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.item.video{
-
-}
 video{
   cursor:default;
 }
-span.header{
-  font-size:1.5rem;
+.info{
+  display:none;
+  width:70%;
+  margin:auto;
+}
+.info h2{
+
 }
