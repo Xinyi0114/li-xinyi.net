@@ -6,13 +6,14 @@ import { CSS2DRenderer, CSS2DObject} from './three.js-master/examples/jsm/render
 
 const GLTFloader = new GLTFLoader();
 const FBXloader = new FBXLoader();
-GLTFLoader.load( '3d/female.gltf', function (gltf) {
+const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   scene.add( gltf.scene );
-  //fbx.scene.position.set(10, 6, -10);
-
+  gltf.scene.position.set(10, 6, -10);
+  gltf.scene.layers.set(1)
 }, undefined, function ( error ) {
 
-	console.error( error );
+  console.error( error );
+
 } );
 
   const scene = new THREE.Scene()
