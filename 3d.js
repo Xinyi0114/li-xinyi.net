@@ -3,7 +3,7 @@ import {GLTFLoader} from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
 import {FBXLoader} from './three.js-master/examples/jsm/loaders/FBXLoader.js';
 import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls.js';
 import { CSS2DRenderer, CSS2DObject} from './three.js-master/examples/jsm/renderers/CSS2DRenderer.js';
-
+import { DRACOLoader } from './three.js-master/examples/jsm/loaders/DRACOLoader.js';
 const gltfLoader = new GLTFLoader();
 const FBXloader = new FBXLoader();
 const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
@@ -46,3 +46,16 @@ const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   controls.update()
   controls.listenToKeyEvents( window );
   //
+
+  const makePlane = function(width,height){
+    const geometry = new THREE.PlaneGeometry( width, height);
+
+    const material = new THREE.MeshBasicMaterial({color: 0xffffff})
+     material.side = THREE.DoubleSide;
+
+    const mesh = new THREE.Mesh( geometry, material );
+    scene.add( mesh );
+    return mesh
+  }
+  const test=makePlane(160,90)
+  scene.add(test)
