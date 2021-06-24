@@ -16,7 +16,7 @@ const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
 } );
 
   const scene = new THREE.Scene()
-  const ambientLight = new THREE.AmbientLight(0x777777)
+  const ambientLight = new THREE.AmbientLight(0x404040)
   scene.add(ambientLight)
   const pointLight = new THREE.PointLight(0xffffff,1,0)
   pointLight.position.set(500,500,-2000)
