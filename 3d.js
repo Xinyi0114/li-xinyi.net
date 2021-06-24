@@ -26,7 +26,7 @@ FBXloader.load( '3d/Female.fbx', function (fbx) {
 
   //webgl renderer
   const sectionTag = document.querySelector("div.three")
-  renderer = new THREE.WebGLRenderer({
+  const renderer = new THREE.WebGLRenderer({
     antialia:true
   })
   renderer.setSize(window.innerWidth, window.innerHeight)
