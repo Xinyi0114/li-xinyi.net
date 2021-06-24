@@ -4,8 +4,8 @@ import {FBXLoader} from './three.js-master/examples/jsm/loaders/FBXLoader.js';
 import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls.js';
 import { CSS2DRenderer, CSS2DObject} from './three.js-master/examples/jsm/renderers/CSS2DRenderer.js';
 import { DRACOLoader } from './three.js-master/examples/jsm/loaders/DRACOLoader.js';
+
 const gltfLoader = new GLTFLoader();
-const FBXloader = new FBXLoader();
 const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   scene.add( gltf.scene );
   gltf.scene.position.set(10, 6, -10);
@@ -32,7 +32,8 @@ const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   renderer.setSize(window.innerWidth, window.innerHeight)
   renderer.setPixelRatio(window.devicePixelRatio)
   renderer.setClearColor(0x000000, 1)
-
+  sectionTag.appendChild(renderer.domElement)
+  
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5000)
   camera.position.z = -50;
   const controls = new OrbitControls(camera, renderer.domElement);
