@@ -5,6 +5,28 @@ import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitContro
 import { CSS2DRenderer, CSS2DObject} from './three.js-master/examples/jsm/renderers/CSS2DRenderer.js';
 import { DRACOLoader } from './three.js-master/examples/jsm/loaders/DRACOLoader.js';
 
+const sectionTag = document.querySelector("div.three")
+const renderer = new THREE.WebGLRenderer({
+  antialia:true
+})
+renderer.setSize(window.innerWidth, window.innerHeight)
+renderer.setPixelRatio(window.devicePixelRatio)
+renderer.setClearColor(0x000000, 1)
+sectionTag.appendChild(renderer.domElement)
+
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5000)
+//camera.position.z = -50;
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+controls.screenSpacePanning = false;
+controls.minDistance = 100;
+controls.maxDistance = 500;
+controls.maxPolarAngle = Math.PI / 2;
+controls.keyPanSpeed = 15;
+controls.update()
+controls.listenToKeyEvents( window );
+
 const gltfLoader = new GLTFLoader();
 const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   scene.add( gltf.scene );
@@ -26,28 +48,6 @@ const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   //
   //
 
-  //webgl renderer
-  const sectionTag = document.querySelector("div.three")
-  const renderer = new THREE.WebGLRenderer({
-    antialia:true
-  })
-  renderer.setSize(window.innerWidth, window.innerHeight)
-  renderer.setPixelRatio(window.devicePixelRatio)
-  renderer.setClearColor(0x000000, 1)
-  sectionTag.appendChild(renderer.domElement)
-
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5000)
-  //camera.position.z = -50;
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.05;
-  controls.screenSpacePanning = false;
-  controls.minDistance = 100;
-  controls.maxDistance = 500;
-  controls.maxPolarAngle = Math.PI / 2;
-  controls.keyPanSpeed = 15;
-  controls.update()
-  controls.listenToKeyEvents( window );
   //
 
   const geometry = new THREE.BoxGeometry( 5, 5, 5 );
