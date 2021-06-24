@@ -15,7 +15,7 @@ FBXloader.load( '3d/Female.fbx', function (fbx) {
 	console.error( error );
 } );
 
-scene = new THREE.Scene()
+  const scene = new THREE.Scene()
   const ambientLight = new THREE.AmbientLight(0x777777)
   scene.add(ambientLight)
   const pointLight = new THREE.PointLight(0xffffff,1,0)
