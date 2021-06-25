@@ -101,13 +101,21 @@ function main() {
 main();
 */
 const scene = new THREE.Scene();
+scene.background = new THREE.Color().setHSL( 0.6, 0, 1 );
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
-const light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
-scene.add( light );
+
+				const hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 0.6 );
+				hemiLight.color.setHSL( 0.6, 1, 0.6 );
+				hemiLight.groundColor.setHSL( 0.095, 1, 0.75 );
+				hemiLight.position.set( 0, 50, 0 );
+				scene.add( hemiLight );
+
+				const hemiLightHelper = new THREE.HemisphereLightHelper( hemiLight, 10 );
+				scene.add( hemiLightHelper );
 
 const geometry = new THREE.BoxGeometry();
 const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
