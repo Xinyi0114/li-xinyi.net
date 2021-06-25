@@ -72,10 +72,10 @@ function animate() {
 const gltfLoader = new GLTFLoader();
 const loadFemale = gltfLoader.load( './3d/female2.gltf', function ( gltf ) {
   scene.add( gltf.scene );
-  gltf.scene.position.set(10, 6, -10);
+  gltf.scene.position.set(0, 0, 0);
 }, undefined, function ( error ) {
 
-  console.error( error );
+  //console.error( error );
 
 } )
 animate();
