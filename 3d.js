@@ -1,7 +1,7 @@
 import * as THREE from './three.js-master/build/three.module.js';
 import {GLTFLoader} from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
 //import {FBXLoader} from './three.js-master/examples/jsm/loaders/FBXLoader.js';
-//import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls.js';
+import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls.js';
 //import { CSS2DRenderer, CSS2DObject} from './three.js-master/examples/jsm/renderers/CSS2DRenderer.js';
 import { DRACOLoader } from './three.js-master/examples/jsm/loaders/DRACOLoader.js';
 
