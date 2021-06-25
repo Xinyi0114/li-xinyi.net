@@ -4,7 +4,7 @@ import {GLTFLoader} from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
 //import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls.js';
 //import { CSS2DRenderer, CSS2DObject} from './three.js-master/examples/jsm/renderers/CSS2DRenderer.js';
 import { DRACOLoader } from './three.js-master/examples/jsm/loaders/DRACOLoader.js';
-/*
+
 const sectionTag = document.querySelector("div.three")
 const renderer = new THREE.WebGLRenderer({
   antialia:true
@@ -57,8 +57,8 @@ const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
   const cube = new THREE.Mesh( geometry, material );
   scene.add( cube );
-*/
 
+/*
 function main() {
   const canvas = document.querySelector('div.three');
   const renderer = new THREE.WebGLRenderer({canvas});
@@ -97,3 +97,4 @@ function main() {
 }
 
 main();
+*/
