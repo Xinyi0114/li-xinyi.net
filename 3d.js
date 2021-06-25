@@ -27,7 +27,7 @@ controls.maxPolarAngle = Math.PI / 2;
 controls.keyPanSpeed = 15;
 controls.update()
 controls.listenToKeyEvents( window );
-
+/*
 const gltfLoader = new GLTFLoader();
 const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   scene.add( gltf.scene );
@@ -37,7 +37,7 @@ const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   console.error( error );
 
 } );
-
+*/
   const scene = new THREE.Scene()
   scene.add( camera );
   const ambientLight = new THREE.AmbientLight(0x404040)
