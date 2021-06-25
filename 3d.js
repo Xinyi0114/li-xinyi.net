@@ -4,7 +4,7 @@ import {GLTFLoader} from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
 import {OrbitControls} from './three.js-master/examples/jsm/controls/OrbitControls.js';
 //import { CSS2DRenderer, CSS2DObject} from './three.js-master/examples/jsm/renderers/CSS2DRenderer.js';
 import { DRACOLoader } from './three.js-master/examples/jsm/loaders/DRACOLoader.js';
-
+/*
 const sectionTag = document.querySelector("div.three")
 const renderer = new THREE.WebGLRenderer({
   antialia:true
@@ -37,7 +37,9 @@ const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
   console.error( error );
 
 } );
+
 */
+/*
   const scene = new THREE.Scene()
   scene.add( camera );
   const ambientLight = new THREE.AmbientLight(0x404040)
@@ -98,3 +100,24 @@ function main() {
 
 main();
 */
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize( window.innerWidth, window.innerHeight );
+document.body.appendChild( renderer.domElement );
+const light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
+scene.add( light );
+
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+const cube = new THREE.Mesh( geometry, material );
+scene.add( cube );
+
+camera.position.z = 5;
+
+function animate() {
+	requestAnimationFrame( animate );
+	renderer.render( scene, camera );
+}
+animate();
