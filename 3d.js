@@ -70,7 +70,7 @@ function animate() {
 	renderer.render( scene, camera );
 }
 const gltfLoader = new GLTFLoader();
-const loadFemale = gltfLoader.load( './3d/female3.gltf', function ( gltf ) {
+const loadFemale = gltfLoader.load( './3d/female4.gltf', function ( gltf ) {
   scene.add( gltf.scene );
   gltf.scene.position.set(0, 0, 0);
 }, undefined, function ( error ) {
