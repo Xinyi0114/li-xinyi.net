@@ -17,16 +17,6 @@ sectionTag.appendChild(renderer.domElement)
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5000)
 //camera.position.z = -50;
 */
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.dampingFactor = 0.05;
-controls.screenSpacePanning = false;
-controls.minDistance = 100;
-controls.maxDistance = 500;
-controls.maxPolarAngle = Math.PI / 2;
-controls.keyPanSpeed = 15;
-controls.update()
-controls.listenToKeyEvents( window );
 /*
 const gltfLoader = new GLTFLoader();
 const loadFemale = gltfLoader.load( './3d/female.gltf', function ( gltf ) {
@@ -64,6 +54,16 @@ const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
 camera.position.z = 5;
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+controls.screenSpacePanning = false;
+controls.minDistance = 100;
+controls.maxDistance = 500;
+controls.maxPolarAngle = Math.PI / 2;
+controls.keyPanSpeed = 15;
+controls.update()
+controls.listenToKeyEvents( window );
 
 function animate() {
 	requestAnimationFrame( animate );
