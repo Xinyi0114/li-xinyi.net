@@ -129,7 +129,7 @@ video{
   display:none;
   width:70%;
   margin:auto;
-  z-index: 10;
+  z-index: 20;
 }
 .info h2{
 
