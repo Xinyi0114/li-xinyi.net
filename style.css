@@ -37,6 +37,7 @@ body{
   font-family: 'Barlow-elasticc';
   position:fixed;
   font-size: 1rem;
+  z-index:10;
 }
 .menu span{
   position:fixed;
@@ -70,6 +71,7 @@ body{
   justify-content: flex-start;
   top:100vh;
   position:absolute;
+  z-index: 10;
 }
 
 .item{
@@ -127,6 +129,7 @@ video{
   display:none;
   width:70%;
   margin:auto;
+  z-index: 10;
 }
 .info h2{
 
@@ -135,4 +138,5 @@ video{
   position:fixed;
   width:100vw;
   height:100vh;
+  z-index: 1;
 }
