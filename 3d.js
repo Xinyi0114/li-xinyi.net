@@ -16,7 +16,7 @@ sectionTag.appendChild(renderer.domElement)
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 5000)
 //camera.position.z = -50;
-
+*/
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
@@ -70,7 +70,7 @@ function animate() {
 	renderer.render( scene, camera );
 }
 const gltfLoader = new GLTFLoader();
-const loadFemale = gltfLoader.load( './3d/female5.gltf', function ( gltf ) {
+const loadFemale = gltfLoader.load( './3d/female4.gltf', function ( gltf ) {
   scene.add( gltf.scene );
   gltf.scene.position.set(0, 0, 0);
 }, undefined, function ( error ) {
